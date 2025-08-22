@@ -54,10 +54,11 @@ def root():
     return {"status": "ok", "message": "LlamaIndex + FastAPI on Azure"}
 
 @app.post("/query")
-def query(body: QueryIn):
+def query():#body: QueryIn):
     answer = 'test'
     #answer = query_engine.query(body.q)
     print('answer')
     print(answer)
     return {"answer": str(answer)}
+
 
