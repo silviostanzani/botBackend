@@ -1,11 +1,12 @@
 import os
 from fastapi import FastAPI, Query
+'''
 from pydantic import BaseModel
 from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, StorageContext, load_index_from_storage
 from llama_index.core.settings import Settings
 from llama_index.llms.azure_openai import AzureOpenAI
 from llama_index.embeddings.azure_openai import AzureOpenAIEmbedding
-
+'''
 '''
 # --- Configure LLM + embeddings for Azure OpenAI ---
 # Create these App Service settings (Configuration > Application settings)
@@ -44,15 +45,19 @@ query_engine = index.as_query_engine(response_mode="compact")
 
 app = FastAPI(title="LlamaIndex on Azure App Service")
 
-class QueryIn(BaseModel):
-    q: str
+#class QueryIn(BaseModel):
+#    q: str
 
 @app.get("/")
 def root():
+    print('ok')
     return {"status": "ok", "message": "LlamaIndex + FastAPI on Azure"}
 
 @app.post("/query")
 def query(body: QueryIn):
     answer = 'test'
     #answer = query_engine.query(body.q)
+    print('answer')
+    print(answer)
     return {"answer": str(answer)}
+
