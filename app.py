@@ -1,4 +1,3 @@
-'''
 from flask import Flask
 
 app = Flask(__name__)
@@ -9,9 +8,9 @@ def home():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
 '''
-
-
 from fastapi import FastAPI
 
 app = FastAPI()
@@ -23,4 +22,5 @@ def read_root():
 @app.get("/items/{item_id}")
 def read_item(item_id: int, q: str = None):
     return {"item_id": item_id, "q": q}
+'''
 
