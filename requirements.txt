@@ -1,7 +1,2 @@
-fastapi
-uvicorn[standard]
-gunicorn
-llama-index
-llama-index-llms-azure-openai
+flask
 
-llama-index-embeddings-azure-openai
